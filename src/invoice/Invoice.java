@@ -8,20 +8,20 @@ import java.util.Scanner;
 
 public class Invoice {
 
-    public static int calculateTotalPrice(int price,String foodname)
+    public static int calculateTotalPrice(int price,String foodName)
     {
         System.out.print("Enter the Quantity: ");
         Scanner getQuantity = new Scanner(System.in);
         int quantity = getQuantity.nextInt();
-        if(foodname.equals("VegBiryani"))
+        if(foodName.equals("VegBiryani"))
         {
             VegBiryani vegBiryani = new VegBiryani(quantity);
         }
-        else if(foodname.equals("ChickenBiryani"))
+        else if(foodName.equals("ChickenBiryani"))
         {
             ChickenBiryani chickenBiryani = new ChickenBiryani(quantity);
         }
-        else if(foodname.equals("MuttonBiryani"))
+        else if(foodName.equals("MuttonBiryani"))
         {
             MuttonBiryani muttonBiryani = new MuttonBiryani(quantity);
         }

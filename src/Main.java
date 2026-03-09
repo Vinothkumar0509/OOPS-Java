@@ -1,5 +1,7 @@
 import nonveg.ChickenBiryani;
 import nonveg.MuttonBiryani;
+import utils.OrderFood;
+import utils.OrderFoodInterface;
 import vegtarian.VegBiryani;
 
 import java.util.Scanner;
@@ -31,8 +33,10 @@ public class Main {
                 Scanner getVegId = new Scanner(System.in);
                 int vegId = getVegId.nextInt();
                 if (vegId == 1) {
-                    VegBiryani vegBiryani = new VegBiryani();
+                    OrderFood vegBiryani = new VegBiryani();
                     vegBiryani.prepare();
+                    vegBiryani.makeAPayment();
+                    vegBiryani.feedback("5");
                 }
 
             }
@@ -46,11 +50,15 @@ public class Main {
 
 
                 if (nonVegId == 1) {
-                    ChickenBiryani chickenBiryani = new ChickenBiryani();
+                    OrderFoodInterface chickenBiryani = new ChickenBiryani();
                     chickenBiryani.prepare();
+                    chickenBiryani.makeAPayment();
+                    chickenBiryani.feedback("5");
                 } else if (nonVegId == 2) {
-                    MuttonBiryani muttonBiryani = new MuttonBiryani();
+                    OrderFoodInterface muttonBiryani = new MuttonBiryani();
                     muttonBiryani.prepare();
+                    muttonBiryani.makeAPayment();
+                    muttonBiryani.feedback("5");
                 }
 
             } else if (menuId == 0) {

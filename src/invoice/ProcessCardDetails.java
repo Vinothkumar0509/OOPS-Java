@@ -1,5 +1,5 @@
 package invoice;
-
+import exception.InvalidPinFoundException;
 import java.util.Scanner;
 
 public class ProcessCardDetails {
@@ -16,6 +16,10 @@ public class ProcessCardDetails {
         System.out.print("Enter Your Pin:");
         Scanner getPin = new Scanner(System.in);
         String pin= getPin.next();
+
+        if(pin.length()!=4){
+            throw new InvalidPinFoundException("Invalid Pin Observed :"+pin);
+        }
 
         CardDetails cardDetails = new CardDetails();
         cardDetails.setName(name);

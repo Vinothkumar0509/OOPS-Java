@@ -1,5 +1,8 @@
 package invoice;
 
+import java.util.Objects;
+import java.util.Optional;
+
 public class CardDetails {
 
     private String name;
@@ -9,15 +12,6 @@ public class CardDetails {
 
     public String getName() {
         return name;
-    }
-
-    @Override
-    public String toString() {
-        return "CardDetails{" +
-                "name='" + name + '\'' +
-                ", cardNo=" + cardNo +
-                ", status=" + status +
-                '}';
     }
 
     public void setName(String name) {
@@ -49,5 +43,14 @@ public class CardDetails {
             this.status = false;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "CardDetails{" +
+                "name='" + name + '\'' +
+                ", cardNo=" + cardNo +
+                ", status=" + status +
+                '}';
     }
 }

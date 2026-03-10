@@ -6,11 +6,10 @@ import invoice.ProcessCardDetails;
 import utils.OrderFood;
 import utils.PrepareFoodItem;
 
-import javax.smartcardio.Card;
 //Parent Class and Example for abstraction
 public class VegBiryani extends OrderFood {
 
-    private int quantity;
+    private static int quantity;
 
     public VegBiryani(int quantityFromInvoice) {
         this.quantity = quantityFromInvoice;
@@ -22,8 +21,15 @@ public class VegBiryani extends OrderFood {
 
     public void prepare() {
         final int price = 180;
-        int totalPrice = Invoice.calculateTotalPrice(price,"VegBiryani");
+        double totalPrice = Invoice.calculateTotalPrice(price,"VegBiryani");
 //        super.setPrepareFoodItem("VegBiryani",quantity,totalPrice);
+
+        System.out.println("Preparing VegBiryani");
+        System.out.println("Order: VegBiryani");
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Total: " + totalPrice);
+
+        System.out.println("Order Completed!!!");
     }
 
     public void makeAPayment() {

@@ -7,25 +7,24 @@ import utils.OrderFoodInterface;
 import utils.PrepareFoodItem;
 
 import java.util.Scanner;
-
+//Interface example
 public class MuttonBiryani extends PrepareFoodItem implements OrderFoodInterface {
 
-    private int quantity;
+    private static int quantity;
 
-    public MuttonBiryani(int quantityFromInvoice) {
-        this.quantity = quantityFromInvoice;
-    }
 
     public MuttonBiryani() {
     }
 
+    public MuttonBiryani(int quantityFromInvoice) {
+        quantity = quantityFromInvoice;
+    }
 
+
+    @Override
     public void prepare() {
         final int price = 320;
-        System.out.print("Enter the Quantity: ");
-        Scanner getQuantity = new Scanner(System.in);
-        int quantity = getQuantity.nextInt();
-        int totalPrice = Invoice.calculateTotalPrice(price, "MuttonBiryani");
+        double totalPrice = Invoice.calculateTotalPrice(price, "MuttonBiryani");
         super.setPrepareFoodItem("MuttonBiryani", quantity, totalPrice);
         super.prepare();
 

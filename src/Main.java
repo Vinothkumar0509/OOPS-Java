@@ -3,7 +3,6 @@ import nonveg.MuttonBiryani;
 import utils.OrderFood;
 import utils.OrderFoodInterface;
 import vegtarian.VegBiryani;
-
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -26,7 +25,6 @@ public class Main {
             Scanner getMenuOption = new Scanner(System.in);
             int menuId = getMenuOption.nextInt();
             if (menuId == 1) {
-
                 System.out.println("VEGETARIAN");
                 System.out.println("1.Veg-Biryani");
                 System.out.println("0.Exit");
@@ -45,16 +43,16 @@ public class Main {
                 System.out.println("1.Chicken-Biryani");
                 System.out.println("2.Mutton-Biryani");
                 System.out.println("0.Exit");
+
                 Scanner getNonVegId = new Scanner(System.in);
                 int nonVegId = getNonVegId.nextInt();
-
-
                 if (nonVegId == 1) {
                     OrderFoodInterface chickenBiryani = new ChickenBiryani();
                     chickenBiryani.prepare();
                     chickenBiryani.makeAPayment();
                     chickenBiryani.feedback("5");
-                } else if (nonVegId == 2) {
+                }
+                else if (nonVegId == 2) {
                     OrderFoodInterface muttonBiryani = new MuttonBiryani();
                     muttonBiryani.prepare();
                     muttonBiryani.makeAPayment();

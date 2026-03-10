@@ -6,11 +6,9 @@ import invoice.ProcessCardDetails;
 import utils.OrderFoodInterface;
 import utils.PrepareFoodItem;
 
-import java.util.Scanner;
-
 public class ChickenBiryani extends PrepareFoodItem implements OrderFoodInterface {
 
-    private int quantity;
+    private static int quantity;
 
     public ChickenBiryani(int quantityFromInvoice) {
         this.quantity = quantityFromInvoice;
@@ -19,13 +17,10 @@ public class ChickenBiryani extends PrepareFoodItem implements OrderFoodInterfac
     public ChickenBiryani() {
     }
 
-
+    @Override
     public void prepare() {
-        final int price = 240;
-        System.out.print("Enter the Quantity: ");
-        Scanner getQuantity = new Scanner(System.in);
-        int quantity = getQuantity.nextInt();
-        int totalPrice = Invoice.calculateTotalPrice(price, "ChickenBiryani");
+        final double price = 240;
+        double totalPrice = Invoice.calculateTotalPrice(price,"Chicken Biryani","Hyderabad SS");
         super.setPrepareFoodItem("ChickenBiryani", quantity, totalPrice);
         super.prepare();
 
@@ -38,7 +33,7 @@ public class ChickenBiryani extends PrepareFoodItem implements OrderFoodInterfac
         ProcessCardDetails processCardDetails = new ProcessCardDetails();
         CardDetails cardDetails = processCardDetails.processCard();
         if (cardDetails.isStatus()) {
-            System.out.println("Login Payment Info " + cardDetails);
+            System.out.println("Logging Payment Info " + cardDetails);
             System.out.println("Order Payment Completed!!!");
         } else {
             System.out.println("Order Payment Failed!!!");
